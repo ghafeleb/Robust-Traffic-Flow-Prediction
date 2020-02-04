@@ -1,3 +1,3 @@
 # MinMaxPercentage
 
-It minimizes the mean error and at the same time minimizes the variance of the prediction, i.e., minimizing the worst case senarios (max) brings accuracy (min absolute error) and reliability (min variance of error).
+Minimizing the average error in training the model has always been in a spotlight, i.e., finding the highest accuracy in terms of MAE, MSE, and so on. In our formulation, not only the accuracy experiences improvement, but also the variance of the error which has not received enough attention has shrinked.
