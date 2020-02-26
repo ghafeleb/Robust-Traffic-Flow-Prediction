@@ -15,6 +15,6 @@ pip install -r requirements.txt
 ```
 
 ## Data
-The METR-LA data is from the paper by Yaguang. It includes the data collected by Los Angeles loop sensors on highways. The location of sensors are shown in the following figure from his paper. 
+We use the METR-LA data from Yaguang's paper. It includes the data collected by Los Angeles loop sensors on highways. The location of sensors are shown in the following figure from his paper. 
 <img src="https://github.com/ghafeleb/TrafficPrediciton_MinMaxPercentage/blob/master/figures/METR-LA.JPG" width="400" height="400" align="middle"><br>
-You can also find the original data on his [GitHub](https://github.com/liyaguang/DCRNN). To use this data with the needed format in our Neural Network, you can find the pickled file [here](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing).
+To use this data with the needed format in our model, you can find the pickled file [here](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). You can also find the original data on his [GitHub](https://github.com/liyaguang/DCRNN). 
