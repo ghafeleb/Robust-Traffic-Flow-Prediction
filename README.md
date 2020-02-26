@@ -20,7 +20,7 @@ We use the METR-LA data from the following paper:<br>
 The data includes the recorded speed of Los Angeles highways collected by loop sensors. It contains records of 207 sensors from March 1st 2012 to Jun 30th 2012.The location of sensors are shown in the following figure: <br>
 <img src="https://github.com/ghafeleb/TrafficPrediciton_MinMaxPercentage/blob/master/figures/METR-LA.JPG" width="400" height="400" align="middle"><br>
 To use the METR-LA data in our model, we have changed its structure. For example, the structure of one record in our data is:<br>
-|                     | day_number at 02:10:00 | hr_min at 02:10:00 | speed at 02:10:00 | day_number at 02:15:00 | hr_min at 02:15:00 | speed at 02:15:00 | ... | hr_min at 03:05:00 | speed at 03:05:00 | day_number at 03:05:00 |
+|                     | day number at 02:10:00 | time in minutes at 02:10:00 | speed at 02:10:00 | day number at 02:15:00 | time in minutes at 02:15:00 | speed at 02:15:00 | ... | time in minutes at 03:05:00 | speed at 03:05:00 | day number at 03:05:00 |
 |:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 | Sensor x at 2012/03/01 02:10:20 |   4   |   130   |   70.0   |   4   |   135   |   68.0   |    ...   |   4   |   185   |   65.0   |
 
