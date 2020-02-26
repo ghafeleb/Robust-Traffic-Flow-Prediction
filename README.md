@@ -22,7 +22,7 @@ The data includes the recorded speed of Los Angeles highways collected by loop s
 To use the METR-LA data in our model, we have changed its structure. For example, the structure of one record in our data is:<br>
 |                     | day_number at 02:10:00 | hr_min at 02:10:00 | speed at 02:10:00 | day_number at 02:15:00 | hr_min at 02:15:00 | speed at 02:15:00 | ... | hr_min at 03:05:00 | speed at 03:05:00 | day_number at 03:05:00 |
 |:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Sensor x at 2012/03/01 02:10:20 |   2   |   130   |   70.0   |   2   |   135   |   68.0   |    ...   |   2   |   185   |   65.0   |
+| Sensor x at 2012/03/01 02:10:20 |   4   |   130   |   70.0   |   4   |   135   |   68.0   |    ...   |   4   |   185   |   65.0   |
 
 
 
