@@ -16,10 +16,17 @@ pip install -r requirements.txt
 
 ## Data
 We use the METR-LA data from the following paper:<br>
-[Yaguang Li, Rose Yu, Cyrus Shahabi, Yan Liu, Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting, ICLR 2018](https://arxiv.org/abs/1707.01926).<br>
-It includes the data collected by Los Angeles loop sensors on highways. The location of sensors are shown in the following figure from his paper. <br>
+[Yaguang Li, Rose Yu, Cyrus Shahabi, Yan Liu, Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting, ICLR 2018](https://arxiv.org/abs/1707.01926).<br> You can find the original data from the [GitHub page](https://github.com/liyaguang/DCRNN) of this paper.
+The data includes the recorded speed of Los Angeles highways collected by loop sensors. It contains records of 207 sensors from March 1st 2012 to Jun 30th 2012.The location of sensors are shown in the following figure: <br>
 <img src="https://github.com/ghafeleb/TrafficPrediciton_MinMaxPercentage/blob/master/figures/METR-LA.JPG" width="400" height="400" align="middle"><br>
-To use this data with the needed format in our model, you can find the pickled file [here](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). You can also find the original data on the [GitHub](https://github.com/liyaguang/DCRNN) page of the Li's paper. 
+To use the METR-LA data in our model, we have changed its structure. For example, the structure of one record in our data is:<br>
+|                     | day_number at t | hr_min at t | speed at t | day_number at t+1 | hr_min at 2018/03/01 00:00:00 t+1 | speed at t+1 | ... | hr_min at t+12 | speed at t+12 | day_number at  t+12  |
+|:-------------------:|:--------:|:--------:|:--------:|:--------:|
+| Sensor 106 at 2012/03/01 time t |   60.0   |   65.0   |   70.0   |    ...   |
+
+
+
+The pickled file of the data with the needed format in our model is available at [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). 
 
 ## Get Started
 You can train your model by "trainer_nn.py".
