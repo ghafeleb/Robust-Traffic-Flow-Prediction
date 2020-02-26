@@ -27,7 +27,7 @@ To use the METR-LA data in our model, we changed the structure of data. For exam
 There are 3 features for 12 consecutive 5-minute time intervals in each record:
 - day number: the number of the day in a week that starts from Monday. For instance, Monday has day number 1 and Sunday has day number 7.
 - time in minutes: the time of the day in minutes. For example, 2:30 pm is (12+2) * 60+30 = 870 in minutes.
-_ speed
+- speed
 
 
 The pickled file of the data with the needed format in our model is available at [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). 
