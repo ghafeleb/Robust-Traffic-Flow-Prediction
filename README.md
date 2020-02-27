@@ -16,19 +16,25 @@ pip install -r requirements.txt
 
 ## Data
 We use the METR-LA data from the following paper:<br>
-[Yaguang Li, Rose Yu, Cyrus Shahabi, Yan Liu, Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting, ICLR 2018](https://arxiv.org/abs/1707.01926).<br> You can find the original data from the [GitHub page](https://github.com/liyaguang/DCRNN) of this paper.
-The data includes the recorded speed of Los Angeles highways collected by loop sensors. It contains records of 207 sensors from March 1st 2012 to Jun 30th 2012.The location of sensors are shown in the following figure: <br>
+[Yaguang Li, Rose Yu, Cyrus Shahabi, Yan Liu, Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting, ICLR 2018](https://arxiv.org/abs/1707.01926).<br> 
+You can find the original data from the [GitHub page](https://github.com/liyaguang/DCRNN) of this paper.
+The data includes the recorded speed of Los Angeles highways collected by loop sensors. It contains records of 207 sensors from March 1st 2012 to Jun 30th 2012. The location of sensors are shown in the following figure: <br>
 <img src="https://github.com/ghafeleb/TrafficPrediciton_MinMaxPercentage/blob/master/figures/METR-LA.JPG" width="400" height="400" align="middle"><br>
-To use the METR-LA data in our model, we changed the structure of data. For example, the structure of one record in our data is:<br>
-|                     | day number at 02:10:00 | time in minutes at 02:10:00 | speed at 02:10:00 | day number at 02:15:00 | time in minutes at 02:15:00 | speed at 02:15:00 | ... | time in minutes at 03:05:00 | speed at 03:05:00 | day number at 03:05:00 |
+To use the METR-LA data in our model, we changed the structure of data. For example, the structure of one record in our history data is:<br>
+|                     | day number at 02:10:00-02:15:00 | time in minutes at 02:10:00-02:15:00 | speed at 02:10:00-02:15:00 | day number at 2012/03/01 02:15:00-02:20:00 | ... | speed at 03:05:00-03:10:00 |
 |:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Sensor x at 2012/03/01 02:10:20 |   4   |   130   |   70.0   |   4   |   135   |   68.0   |    ...   |   4   |   185   |   65.0   |
+| Sensor x at 2012/03/01 02:10:00 |   4   |   130   |   70.0   |   4   |   135   |   68.0   |    ...   |   4   |   185   |   65.0   |
 
-There are 3 features for 12 consecutive 5-minute time intervals in each record:
-- day number: the number of the day in a week that starts from Monday. For instance, Monday has day number 1 and Sunday has day number 7.
-- time in minutes: the time of the day in minutes. For example, 2:30 pm is (12+2) * 60+30 = 870 in minutes.
-- speed
+We use the information of the past one hour at the location of one sensor to predict the traffic condition in the next one hour of the same location. We have twelve 5-minute time blocks for one hour. For each time block, the history data includes 3 features:
+1. day number: the number of the day in a week that starts from Monday. For instance, Monday has day number 1 and Sunday has day number 7.
+2. time in minutes: the time of the day in minutes. For example, 2:30 pm is (12+2) * 60+30 = 870 in minutes.
+3. speed: average speed during the 5-minute block.
 
+The label data includes the speed of each sensor for the next 1 hour. 
+For example, the structure of one record in our label data is:<br>
+|                     | speed at 21:00:00-21:05:00 | speed at 21:05:00-21:10:00 | ... | speed at 21:55:00-22:00:00 |
+|:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Sensor x at 2012/03/01 02:10:20 |   70.0   |   68.5   | ...  |   65.0   |
 
 The pickled file of the data with the needed format in our model is available at [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). 
 
