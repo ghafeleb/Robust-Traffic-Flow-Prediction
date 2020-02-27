@@ -23,7 +23,7 @@ The data includes the recorded speed of Los Angeles highways collected by loop s
 To use the METR-LA data in our model, we changed the structure of data. For example, the structure of one record in our history data is:<br>
 |                     | day number at 02:10:00-02:15:00 | time in minutes at 02:10:00-02:15:00 | speed at 02:10:00-02:15:00 | day number at 2012/03/01 02:15:00-02:20:00 | ... | speed at 03:05:00-03:10:00 |
 |:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-| Sensor x at 2012/03/01 02:10:00 |   4   |   130   |   70.0   |   4   |   135   |   68.0   |    ...   |   4   |   185   |   65.0   |
+| Sensor x at 2012/03/01 02:10:00 |   4   |   130   |   70.0   |   4   |    ...   |   65.0   |
 
 We use the information of the past one hour at the location of one sensor to predict the traffic condition in the next one hour of the same location. We have twelve 5-minute time blocks for one hour. For each time block, the history data includes 3 features:
 1. day number: the number of the day in a week that starts from Monday. For instance, Monday has day number 1 and Sunday has day number 7.
