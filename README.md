@@ -41,16 +41,15 @@ The label data includes the speed of each sensor for the next 1 hour. For exampl
 
 The pickled file (metr_la_70_20.pkl) of the history and label data is available at [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). The history data (X.csv) and label data (Y.csv) with CSV format are also available at the same [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing) folder. We have used min-max scaling to normalize the data between 0 and 100.
 
-## Get Started
-First, run the following command:
+First, run the following command to create the data directories:
 ```bash
-# Create trained models directories
-mkdir -p saved_models
-
 # Create data directories
 mkdir -p data, data/pickle, data/pickle_plt, data/model
 ```
-Next, you can train your model by "trainer_nn.py":
+Next, copy the pickled data at "data/pickle" and copy two CSV files at "data".
+
+## Train the model
+You can train your model by "trainer_nn.py":
 ```bash
 # Train the model
 python trainer_nn.py
