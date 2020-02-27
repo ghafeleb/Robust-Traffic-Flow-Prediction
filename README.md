@@ -22,7 +22,7 @@ The data includes the recorded speed of Los Angeles highways collected by loop s
 <img src="https://github.com/ghafeleb/TrafficPrediciton_MinMaxPercentage/blob/master/figures/METR-LA.JPG" width="400" height="400" align="middle"><br>
 To use the METR-LA data in our model, we changed the structure of data. For example, the structure of one record in our history data is:<br>
 |                     | day number at 02:10:00-02:15:00 | time in minutes at 02:10:00-02:15:00 | speed at 02:10:00-02:15:00 | day number at 2012/03/01 02:15:00-02:20:00 | ... | speed at 03:05:00-03:10:00 |
-|:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 | Sensor x at 2012/03/01 02:10:00 |   4   |   130   |   70.0   |   4   |   135   |   68.0   |    ...   |   4   |   185   |   65.0   |
 
 We use the information of the past one hour at the location of one sensor to predict the traffic condition in the next one hour of the same location. We have twelve 5-minute time blocks for one hour. For each time block, the history data includes 3 features:
@@ -33,7 +33,7 @@ We use the information of the past one hour at the location of one sensor to pre
 The label data includes the speed of each sensor for the next 1 hour. 
 For example, the structure of one record in our label data is:<br>
 |                     | speed at 21:00:00-21:05:00 | speed at 21:05:00-21:10:00 | ... | speed at 21:55:00-22:00:00 |
-|:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|:-------------------:|:--------:|:--------:|:--------:|:--------:|
 | Sensor x at 2012/03/01 02:10:20 |   70.0   |   68.5   | ...  |   65.0   |
 
 The pickled file of the data with the needed format in our model is available at [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). 
