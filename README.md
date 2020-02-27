@@ -39,7 +39,15 @@ The label data includes the speed of each sensor for the next 1 hour. For exampl
 |:-------------------:|:--------:|:--------:|:--------:|:--------:|
 | Sensor x at 2012/03/01 21:00:00 |   70.0   |   68.5   | ...  |   65.0   |
 
-The pickled file (metr_la_70_20.pkl) of the history and label data is available at [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). The history data (X.csv) and label data (Y.csv) with CSV format are also available at the same [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing) folder. We have used min-max normalization between 0 and 100.
+The pickled file (metr_la_70_20.pkl) of the history and label data is available at [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing). The history data (X.csv) and label data (Y.csv) with CSV format are also available at the same [Google Drive](https://drive.google.com/drive/folders/18edZ3gsBkukyir8r0t8cCGBwWHQZs-k9?usp=sharing) folder. We have used min-max scaling to normalize the data between 0 and 100.
 
 ## Get Started
-You can train your model by "trainer_nn.py".
+First, run the following command:
+```bash
+# Create trained models directories
+mkdir -p saved_models
+
+# Create data directories
+mkdir -p data, data/pickle, data/pickle_plt, data/model
+```
+Next, you can train your model by "trainer_nn.py". If your model is already trained and saved in "saved_models" directory, "model_eval_nn.py" will run the model on the train and test data.
