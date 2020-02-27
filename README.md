@@ -50,4 +50,9 @@ mkdir -p saved_models
 # Create data directories
 mkdir -p data, data/pickle, data/pickle_plt, data/model
 ```
-Next, you can train your model by "trainer_nn.py". If your model is already trained and saved in "saved_models" directory, "model_eval_nn.py" will run the model on the train and test data.
+Next, you can train your model by "trainer_nn.py":
+```bash
+# Train the model
+python trainer_nn.py
+```
+If your model is already trained and saved in "saved_models" directory, "model_eval_nn.py" will run the model on the train and test data.
