@@ -21,14 +21,14 @@ You can find the original data from the [GitHub page](https://github.com/liyagua
 The data includes the recorded speed of Los Angeles highways collected by loop sensors. It contains records of 207 sensors from March 1st 2012 to Jun 30th 2012. The location of sensors are shown in the following figure: <br>
 <img src="https://github.com/ghafeleb/TrafficPrediciton_MinMaxPercentage/blob/master/figures/METR-LA.JPG" width="400" height="400" align="middle"><br>
 To use the METR-LA data in our model, we changed the structure of data. For example, the structure of one record in our history data is:<br>
-|                     | day number at 02:10:00-02:15:00 | time in minutes at 02:10:00-02:15:00 | speed at 02:10:00-02:15:00 | day number at 2012/03/01 02:15:00-02:20:00 | ... | speed at 03:05:00-03:10:00 |
+|                     | day number at 2012/03/01 | average time in minutes at 02:10:00-02:15:00 | average speed at 02:10:00-02:15:00 | day number at 2012/03/01 | ... | speed at 03:05:00-03:10:00 |
 |:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 | Sensor x at 2012/03/01 02:10:00 |   4   |   130   |   70.0   |   4   |    ...   |   65.0   |
 
 We use the information of the past one hour at the location of one sensor to predict the traffic condition in the next one hour of the same location. We have twelve 5-minute time blocks for one hour. For each time block, the history data includes 3 features:
 1. day number: the number of the day in a week that starts from Monday. For instance, Monday has day number 1 and Sunday has day number 7.
-2. time in minutes: the time of the day in minutes. For example, 2:30 pm is (12+2) * 60+30 = 870 in minutes.
-3. speed: average speed during the 5-minute block.
+2. average time in minutes: the time of the day in minutes. For example, 14:10:00-14:15:00 is ((14 * 60 + 10) + (14 * 60 + 15))/2 = 852.5 in minutes.
+3. average speed: average speed during the 5-minute block at the locatio of sensor.
 
 The label data includes the speed of each sensor for the next 1 hour. 
 For example, the structure of one record in our label data is:<br>
