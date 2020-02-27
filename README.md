@@ -17,14 +17,14 @@ pip install -r requirements.txt
 We use the METR-LA data from the following paper:<br>
 [Yaguang Li, Rose Yu, Cyrus Shahabi, Yan Liu, Diffusion Convolutional Recurrent Neural Network: Data-Driven Traffic Forecasting, ICLR 2018](https://arxiv.org/abs/1707.01926).<br> 
 You can find the original data from the [GitHub page](https://github.com/liyaguang/DCRNN) of this paper.
-The data includes the recorded speed of Los Angeles highways collected by loop sensors. It contains records of 207 sensors from March 1st 2012 to Jun 30th 2012. The location of sensors are shown in the following figure: <br>
+The data includes the recorded speed of Los Angeles highways collected by loop sensors. It contains records of 207 sensors from March 1st 2012 to Jun 30th 2012. The location of the sensors are shown in the following figure: <br>
 
 <p align="center">
   <img width="250" height="250" src="https://github.com/ghafeleb/TrafficPrediciton_MinMaxPercentage/blob/master/figures/METR-LA.JPG">
 </p><br>
 To use the METR-LA data in our model, we changed the structure of data. For example, the structure of one record in our history data before normalization is:<br>
 
-|                     | Day number at 2012/03/01 | Average time in minutes between 02:10:00-02:15:00 | Average speed between 02:10:00-02:15:00 | Day number at 2012/03/01 | ... | Average speed between 03:05:00-03:10:00 |
+|                     | Day number on 2012/03/01 | Average time in minutes between 02:10:00-02:15:00 | Average speed between 02:10:00-02:15:00 | Day number on 2012/03/01 | ... | Average speed between 03:05:00-03:10:00 |
 |:-------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 | Sensor x at 2012/03/01 02:10:00 |   4   |   132.5   |   70.0   |   4   |    ...   |   65.0   |
 
