@@ -12,3 +12,5 @@ def plot_perc(arr, info, perc_list):
         err_temp = np.mean(arr_desc[:perc_size])
         perc_sign = '%'
         print('Mean of first %.2f%c error: %.10f' %(perc_*100, perc_sign, err_temp))
+
+# comment
